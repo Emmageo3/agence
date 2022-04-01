@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('quartiers', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->foreignId('commune')
+            ->constrained()
+            ->onUpdate('restrict')
+            ->onDelete('restrict'); 
             $table->timestamps();
         });
     }

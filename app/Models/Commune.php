@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Commune extends Model
 {
     use HasFactory;
+
+    public function departement()
+    { 
+        return $this->belongsTo(Departement::class); 
+    }
+
+    public function quartiers() 
+    { 
+        return $this->hasMany(Quartier::class); 
+    }
 }

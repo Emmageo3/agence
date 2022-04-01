@@ -13,11 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('proprietes', function (Blueprint $table) {
             $table->id();
             $table->string('numero');
             $table->string('photo');
             $table->string('adresse');
+            $table->foreignId('proprietaire_id')
+            ->constrained()
+            ->onUpdate('restrict')
+            ->onDelete('restrict');
+            $table->foreignId('quartier_id')
+            ->constrained()
+            ->onUpdate('restrict')
+            ->onDelete('restrict');  
             $table->timestamps();
         });
     }
