@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('proprietaires', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->date('datedenaissance');
+            $table->string('lieudenaissance');
+            $table->string('nationalite');
+            $table->string('adresse');
+            $table->string('telephone');
+            $table->string('photo');
+            $table->string('cni');
             $table->timestamps();
         });
     }
