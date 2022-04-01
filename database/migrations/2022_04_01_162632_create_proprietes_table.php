@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('proprietes', function (Blueprint $table) {
             $table->id();
+            $table->string('numero');
+            $table->string('photo');
+            $table->string('adresse');
             $table->timestamps();
         });
     }
