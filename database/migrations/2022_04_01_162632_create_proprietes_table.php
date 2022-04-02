@@ -26,6 +26,10 @@ return new class extends Migration
             $table->foreignId('quartier_id')
             ->constrained()
             ->onUpdate('restrict')
+            ->onDelete('restrict'); 
+            $table->foreignId('typepropriete_id')
+            ->constrained()
+            ->onUpdate('restrict')
             ->onDelete('restrict');  
             $table->timestamps();
         });

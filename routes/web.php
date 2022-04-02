@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProprieteController;
+use App\Http\Controllers\ProprietaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +22,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::resource('proprietes', ProprieteController::class)->middleware(['auth']);
+
+Route::resource('proprietaires', ProprietaireController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
