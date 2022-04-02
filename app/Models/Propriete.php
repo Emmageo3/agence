@@ -18,4 +18,9 @@ class Propriete extends Model
     { 
         return $this->belongsTo(Quartier::class); 
     }
+
+    public function typepropriete()
+    { 
+        return $this->belongsTo(Typepropriete::class); 
+    }
 }
