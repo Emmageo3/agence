@@ -66,9 +66,11 @@ class ProprieteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Propriete $propriete)
     {
-        //
+        $typeproprietes = Typepropriete::all();
+        $quartiers = Quartier::all();
+        return view('edit', compact('propriete', 'typeproprietes', 'quartiers'));
     }
 
     /**
@@ -78,9 +80,10 @@ class ProprieteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProprieteRequest $proprieteRequest, Propriete $propriete)
     {
-        //
+        $propriete->update($proprieteRequest->all());
+        return redirect()->route('proprietes.index')->with('info', 'La propriete a bien été modifiée');
     }
 
     /**
