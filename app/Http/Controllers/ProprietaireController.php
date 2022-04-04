@@ -28,7 +28,7 @@ class ProprietaireController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

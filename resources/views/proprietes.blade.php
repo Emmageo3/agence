@@ -8,6 +8,7 @@
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">Liste des propriétés</p>
+            <a class="button is-info" href="{{ route('proprietes.create') }}">Ajouter une propriété</a>
         </header>
         <div class="card-content">
             <div class="content">
@@ -59,4 +60,8 @@
     img{
         width: 100px
     }
+
+    .is-info {
+            margin: 0.3em;
+        }
 </style>

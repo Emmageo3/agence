@@ -9,6 +9,8 @@ class Propriete extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['proprietaire_id', 'typepropriete_id', 'quartier_id', 'numero', 'photo', 'adresse', 'loyer'];
+
     public function proprietaire()
     { 
         return $this->belongsTo(Proprietaire::class); 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propriete;
 use App\Models\Proprietaire;
+use App\Models\Typepropriete;
+use App\Models\Quartier;
+use App\Http\Requests\Propriete as ProprieteRequest;
 
 class ProprieteController extends Controller
 {
@@ -28,7 +31,10 @@ class ProprieteController extends Controller
      */
     public function create()
     {
-        //
+        $proprietaires = Proprietaire::all();
+        $typeproprietes = Typepropriete::all();
+        $quartiers = Quartier::all();
+        return view('create', compact('proprietaires', 'typeproprietes', 'quartiers'));
     }
 
     /**
@@ -37,9 +43,10 @@ class ProprieteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProprieteRequest $proprieteRequest)
     {
-        //
+        Propriete::create($proprieteRequest->all());
+        return redirect()->route('proprietes.index')->with('info', 'La propriété a bien été enregistrée');
     }
 
     /**
