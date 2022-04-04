@@ -18,6 +18,35 @@
                     <p>adresse email : <span>{{ $propriete->proprietaire->email }}</span></p>
                     <hr>
                     <h1><a href="#">Voir plus de propriétés de {{ $propriete->proprietaire->prenom }}</a></h1>
+                    
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="content">
+                                    <table class="table is-hoverable">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Numéro</th>
+                                                <th>Photo</th>
+                                                <th>Adresse</th>
+                                                <th>Prix location</th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            
+                                                
+                                                
+                                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                   
                 </div>
                
             </div>
@@ -38,7 +67,15 @@
         font-weight: bold;
     }
 
+    .proprietaire img{
+        width: 20rem;
+    }
+
     .proprietaire a{
         color: #000
+    }
+
+    .image img{
+        width: 10rem;
     }
 </style>

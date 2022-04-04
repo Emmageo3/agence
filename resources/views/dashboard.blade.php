@@ -1,4 +1,2 @@
-<x-app-layout>
+@extends('template')
 
-    
-</x-app-layout>

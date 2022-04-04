@@ -19,6 +19,16 @@
                         @enderror
                     </div>
                     <div class="field">
+                        <label class="label">Sélectionnez le propriétaire</label>
+                        <div class="select">
+                            <select name="proprietaire_id">
+                                @foreach($proprietaires as $proprietaire)
+                                    <option value="{{ $proprietaire->id }}">{{ $proprietaire->prenom }} {{ $proprietaire->nom }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
                         <label class="label">Sélectionnez le type de propriété</label>
                         <div class="select">
                             <select name="typepropriete_id">
@@ -50,7 +60,7 @@
                     <div class="field">
                         <label class="label">Adresse de la propriété</label>
                         <div class="control">
-                          <input class="input @error('adresse') is-danger @enderror" type="text" name="adresse" value="{{ old('adresse') }}" placeholder="Adresse de la propriété">
+                          <input class="input @error('adresse') is-danger @enderror" type="text" name="adresse" value="{{ old('adresse', $propriete->adresse) }}" placeholder="Adresse de la propriété">
                         </div>
                         @error('adresse')
                             <p class="help is-danger">{{ $message }}</p>
@@ -59,7 +69,7 @@
                     <div class="field">
                         <label class="label">Prix de location</label>
                         <div class="control">
-                          <input class="input" type="number" name="loyer" value="{{ old('loyer') }}">
+                          <input class="input" type="number" name="loyer" value="{{ old('loyer', $propriete->loyer) }}">
                         </div>
                         @error('loyer')
                             <p class="help is-danger">{{ $message }}</p>

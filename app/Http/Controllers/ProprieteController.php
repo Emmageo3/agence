@@ -57,7 +57,9 @@ class ProprieteController extends Controller
      */
     public function show(Propriete $propriete)
     {
-        return view('propriete', compact('propriete'));
+        $proprietes = Propriete::all();
+        $proprietaires = Proprietaire::all();
+        return view('propriete', compact('propriete', 'proprietes', 'proprietaires'));
     }
 
     /**
@@ -70,7 +72,8 @@ class ProprieteController extends Controller
     {
         $typeproprietes = Typepropriete::all();
         $quartiers = Quartier::all();
-        return view('edit', compact('propriete', 'typeproprietes', 'quartiers'));
+        $proprietaires = Proprietaire::all();
+        return view('edit', compact('propriete', 'typeproprietes', 'quartiers', 'proprietaires'));
     }
 
     /**

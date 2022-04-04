@@ -28,18 +28,9 @@
                         @enderror
                     </div>
                     <div class="field">
-                        <label class="label">Date de naissance</label>
-                        <div class="control">
-                          <input class="input @error('datedenaissance') is-danger @enderror" type="text" name="datedenaissance" value="{{ old('datedenaissance') }}" placeholder="EX: 1999-12-12">
-                        </div>
-                        @error('datedenaissance')
-                            <p class="help is-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <div class="field">
                         <label class="label">Lieu de naissance</label>
                         <div class="control">
-                          <input class="input" type="text" name="lieudenaissance" value="{{ old('lieudenaissance') }}" value="{{ old('lieudenaissance') }}" placeholder="lieu de naissance">
+                          <input class="input" type="text" name="lieudenaissance" value="{{ old('lieudenaissance') }}"  placeholder="lieu de naissance">
                         </div>
                         @error('lieudenaissance')
                             <p class="help is-danger">{{ $message }}</p>
@@ -48,7 +39,7 @@
                     <div class="field">
                         <label class="label">Adresse</label>
                         <div class="control">
-                          <input class="input" type="text" name="adresse" value="{{ old('adresse') }}" value="{{ old('adresse') }}" placeholder="adresse">
+                          <input class="input" type="text" name="adresse" value="{{ old('adresse') }}"  placeholder="adresse">
                         </div>
                         @error('adresse')
                             <p class="help is-danger">{{ $message }}</p>
@@ -57,7 +48,7 @@
                     <div class="field">
                         <label class="label">Numéro de téléphone</label>
                         <div class="control">
-                          <input class="input" type="text" name="telephone" value="{{ old('telephone') }}" value="{{ old('telephone') }}" placeholder="telephone">
+                          <input class="input" type="text" name="telephone" value="{{ old('telephone') }}"  placeholder="telephone">
                         </div>
                         @error('telephone')
                             <p class="help is-danger">{{ $message }}</p>
@@ -66,7 +57,7 @@
                     <div class="field">
                         <label class="label">Adresse email</label>
                         <div class="control">
-                          <input class="input" type="text" name="email" value="{{ old('email') }}" value="{{ old('email') }}" placeholder="email">
+                          <input class="input" type="text" name="email" value="{{ old('email') }}"  placeholder="email">
                         </div>
                         @error('email')
                             <p class="help is-danger">{{ $message }}</p>
@@ -75,7 +66,7 @@
                     <div class="field">
                         <label class="label">Photo</label>
                         <div class="control">
-                          <input class="input" type="text" name="photo" value="{{ old('photo') }}" value="{{ old('photo') }}" placeholder="photo">
+                          <input class="input" type="text" name="photo" value="{{ old('photo') }}"  placeholder="photo">
                         </div>
                         @error('photo')
                             <p class="help is-danger">{{ $message }}</p>
@@ -84,7 +75,7 @@
                     <div class="field">
                         <label class="label">Numéro d'identification</label>
                         <div class="control">
-                          <input class="input" type="text" name="cni" value="{{ old('cni') }}" value="{{ old('cni') }}" placeholder="CNI">
+                          <input class="input" type="number" name="cni" value="{{ old('cni') }}"  placeholder="CNI">
                         </div>
                         @error('cni')
                             <p class="help is-danger">{{ $message }}</p>

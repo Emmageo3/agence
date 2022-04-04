@@ -29,8 +29,7 @@ class ProprietaireController extends Controller
      */
     public function create()
     {
-        $proprietaires = Proprietaire::all();
-        return view('createproprietaire', compact('proprietaires'));
+        return view('createproprietaire');
     }
 
     /**

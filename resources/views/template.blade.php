@@ -12,7 +12,7 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="">
-            <h1>TASNIM IMMO</h1>
+            <img src="https://tasnimimmobilier.com/wp-content/uploads/2022/02/logo.jpg" alt="" width="200rem">
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -38,25 +38,41 @@
       
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
-                More
+                Authentification
               </a>
       
               <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
+                <a class="navbar-item" href="{{ url('/login') }}">
+                  Connexion
                 </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
+                <a class="navbar-item" href="{{ url('/register') }}">
+                  Inscription
                 </a>
               </div>
             </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                {{ Auth::user()->name }}
+              </a>
+      
+              <div class="navbar-dropdown">
+                <div class="mt-3 space-y-1">
+                  <!-- Authentication -->
+                  <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+  
+                      <a class="navbar-link" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                          {{ __('Log Out') }}
+                  </a>
+                  </form>
+              </div>
+              </div>
+            </div>
+
+
           </div>
       
           
