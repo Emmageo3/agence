@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propriete;
 use App\Models\Proprietaire;
+use App\Http\Requests\Proprietaire as ProprietaireRequest;
 
 class ProprietaireController extends Controller
 {
@@ -28,7 +29,8 @@ class ProprietaireController extends Controller
      */
     public function create()
     {
-        
+        $proprietaires = Proprietaire::all();
+        return view('createproprietaire', compact('proprietaires'));
     }
 
     /**
@@ -37,9 +39,10 @@ class ProprietaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProprietaireRequest $proprietaireRequest)
     {
-        //
+        Proprietaire::create($proprietaireRequest->all());
+        return redirect()->route('proprietaires.index')->with('info', 'Le propriétaire a bien été enregistrée');
     }
 
     /**
@@ -50,7 +53,8 @@ class ProprietaireController extends Controller
      */
     public function show(Proprietaire $proprietaire)
     {
-        return view('proprietaire', compact('proprietaire'));
+        $proprietes = Propriete::all();
+        return view('proprietaire', compact('proprietaire', 'proprietes'));
     }
 
     /**
