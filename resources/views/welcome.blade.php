@@ -52,11 +52,49 @@
           
         </div>
       </nav>
+
+      <img src="https://splendorstudio.net/fancify/broker-lite/wp-content/uploads/2020/07/fancify-image-2.jpg" alt="" width="100%" >
     </header>
     <main class="section">
-        <div class="container">
-            @yield('content')
-        </div>
+
+      <div class="presentation">
+        <h1>TASNIMIMMOBILIER UN NOM AUQUEL VOUS POUVEZ FAIRE CONFIANCE</h1>
+        <p>
+            
+              Quels que soient vos besoins, vous trouverez sans difficulté la location idéale pour toute la famille.
+              Nous disposons de tous les services utiles pour vous garantir un logement ou séjour inoubliable.
+
+              Nous mettons à votre disposition pour vous accompagner à tous vos besoin dans le domaine de l’immobilier.
+
+
+        </p>
+      </div>
+        
     </main>
   </body>
 </html>
+
+<style>
+  header img{
+    height: 50rem;
+  }
+
+  .navbar-item img{
+    height: 10rem
+  }
+
+  .presentation{
+    text-align: center;
+    margin: 2rem;
+
+  }
+
+  .presentation h1{
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .presentation p{
+    margin-top: 1rem;
+  }
+</style>

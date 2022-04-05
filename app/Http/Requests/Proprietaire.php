@@ -32,7 +32,6 @@ class Proprietaire extends FormRequest
             'photo' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:500'],
             'cni' => ['required', 'numeric'],
-            'loyer' => ['required', 'numeric'],
         ];
     }
 }

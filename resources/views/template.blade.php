@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Films</title>
+    <title>Tasnim</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     @yield('css')
   </head>
@@ -35,21 +35,6 @@
             <a class="navbar-item" href="{{ url('/proprietaires') }}">
               Liste des propriétaires
             </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Authentification
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="{{ url('/login') }}">
-                  Connexion
-                </a>
-                <a class="navbar-item" href="{{ url('/register') }}">
-                  Inscription
-                </a>
-              </div>
-            </div>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
