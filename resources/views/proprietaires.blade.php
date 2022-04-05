@@ -60,9 +60,10 @@
 
 <style>
     img{
-        width: 100px
+        width: 100px;
+        height: 50px;
     }
     .is-info {
             margin: 0.3em;
-        }
+    }
 </style>

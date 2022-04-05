@@ -62,9 +62,9 @@ class ProprietaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Proprietaire $proprietaire)
     {
-        //
+        return view('editproprietaire', compact('proprietaire'));
     }
 
     /**
@@ -74,9 +74,10 @@ class ProprietaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProprietaireRequest $proprietaireRequest, Proprietaire $proprietaire)
     {
-        //
+        proprietaire->update($proprietaireRequest->all());
+        return redirect()->route('proprietaires.index')->with('info', 'Le proprietaire a bien été modifiée');
     }
 
     /**
