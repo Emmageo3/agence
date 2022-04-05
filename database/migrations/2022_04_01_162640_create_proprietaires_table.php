@@ -17,11 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->date('datedenaissance');
             $table->string('lieudenaissance');
-            $table->string('nationalite');
             $table->string('adresse');
             $table->string('telephone');
+            $table->string('email');
             $table->string('photo');
             $table->string('cni');
             $table->timestamps();
