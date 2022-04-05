@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProprieteController;
 use App\Http\Controllers\ProprietaireController;
+use App\Http\Controllers\TypeproprieteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,7 @@ Route::get('/dashboard', function () {
 Route::resource('proprietes', ProprieteController::class)->middleware(['auth']);
 
 Route::resource('proprietaires', ProprietaireController::class)->middleware(['auth']);
+
+Route::resource('/typeproprietes', TypeproprieteController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

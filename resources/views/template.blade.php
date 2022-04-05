@@ -36,6 +36,28 @@
               Liste des propriétaires
             </a>
 
+            
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Réglages
+              </a>
+      
+              <div class="navbar-dropdown">
+                <div class="mt-3 space-y-1">
+                  <!-- Authentication -->
+                  <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+                    
+                      <a class="navbar-item" href="{{ url('/typeproprietes') }}">
+                        Types de propriétés
+                      </a>
+                      
+                  </form>
+              </div>
+              </div>
+            </div>
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
                 {{ Auth::user()->name }}

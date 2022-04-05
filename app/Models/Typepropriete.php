@@ -9,6 +9,8 @@ class Typepropriete extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['libelle'];
+
     public function proprietes() 
     { 
         return $this->hasMany(Propriete::class); 
