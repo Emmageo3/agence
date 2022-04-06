@@ -37,7 +37,32 @@
                                         </thead>
                                         <tbody>
                                             
-                                            
+                                            @foreach ($proprietaires as $proprietaire)
+
+                                                @if ($propriete->proprietaire_id == $proprietaire->id)
+
+                                                <tr>
+                                                    <td>{{ $propriete->id }}</td>
+                                                    <td><strong>{{ $propriete->numero }}</strong></td>
+                                                    <td>
+                                                        <img src="{{ $propriete->photo }}" alt="">
+                                                    </td>
+                                                    <td><strong>{{ $propriete->quartier->nom }} , {{ $propriete->adresse }}</strong></td>
+                                                    <td><strong>{{ $propriete->loyer }} Fcfa</strong></td>
+                                                    <td><a class="button is-primary" href="{{ route('proprietes.show', $propriete->id) }}">Voir</a></td>
+                                                    <td><a class="button is-warning" href="{{ route('proprietes.edit', $propriete->id) }}">Modifier</a></td>
+                                                    <td>
+                                                        <form action="{{ route('proprietes.destroy', $propriete->id) }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="button is-danger" type="submit">Supprimer</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                    
+                                                @endif
+                                                
+                                            @endforeach
                                             
                                                 
                                                 

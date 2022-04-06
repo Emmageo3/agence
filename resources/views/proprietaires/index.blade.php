@@ -1,5 +1,6 @@
 @extends('template')
 @section('content')
+
     @if(session()->has('info'))
         <div class="notification is-success">
             {{ session('info') }}
@@ -8,6 +9,16 @@
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">Liste des propriétaires</p>
+            <div class="field has-addons">
+                <div class="control">
+                  <input class="input" type="text" placeholder="Find a repository">
+                </div>
+                <div class="control">
+                  <a class="button is-info">
+                    Search
+                  </a>
+                </div>
+              </div>
             <a class="button is-info" href="{{ route('proprietaires.create') }}">Ajouter une propriété</a>
         </header>
         <div class="card-content">
@@ -63,7 +74,7 @@
         width: 100px;
         height: 50px;
     }
-    .is-info {
+    .is-info, .input {
             margin: 0.3em;
     }
 </style>

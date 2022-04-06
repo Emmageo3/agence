@@ -9,6 +9,8 @@ class Commune extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom', 'departement_id'];
+
     public function departement()
     { 
         return $this->belongsTo(Departement::class); 

@@ -7,6 +7,7 @@ use App\Http\Controllers\TypeproprieteController;
 use App\Http\Controllers\PaysController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\CommuneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,7 @@ Route::resource('/pays', PaysController::class)->middleware(['auth']);
 Route::resource('/regions', RegionController::class)->middleware(['auth']);
 
 Route::resource('/departements', DepartementController::class)->middleware(['auth']);
+
+Route::resource('/communes', CommuneController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
