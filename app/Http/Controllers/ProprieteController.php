@@ -21,7 +21,7 @@ class ProprieteController extends Controller
         $query = $id ? Proprietaire::whereId($id)->firstOrFail()->proprietes() : Propriete::query();
         $proprietes = Propriete::paginate(5);
         $proprietaires = Proprietaire::all();
-        return view('proprietes', compact('proprietes', 'proprietaires', 'id'));
+        return view('proprietes/index', compact('proprietes', 'proprietaires', 'id'));
     }
 
     /**
@@ -34,7 +34,7 @@ class ProprieteController extends Controller
         $proprietaires = Proprietaire::all();
         $typeproprietes = Typepropriete::all();
         $quartiers = Quartier::all();
-        return view('create', compact('proprietaires', 'typeproprietes', 'quartiers'));
+        return view('proprietes/create', compact('proprietaires', 'typeproprietes', 'quartiers'));
     }
 
     /**
@@ -59,7 +59,7 @@ class ProprieteController extends Controller
     {
         $proprietes = Propriete::all();
         $proprietaires = Proprietaire::all();
-        return view('propriete', compact('propriete', 'proprietes', 'proprietaires'));
+        return view('proprietes/show', compact('propriete', 'proprietes', 'proprietaires'));
     }
 
     /**
@@ -73,7 +73,7 @@ class ProprieteController extends Controller
         $typeproprietes = Typepropriete::all();
         $quartiers = Quartier::all();
         $proprietaires = Proprietaire::all();
-        return view('edit', compact('propriete', 'typeproprietes', 'quartiers', 'proprietaires'));
+        return view('proprietes/edit', compact('propriete', 'typeproprietes', 'quartiers', 'proprietaires'));
     }
 
     /**

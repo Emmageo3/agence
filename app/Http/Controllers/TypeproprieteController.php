@@ -16,7 +16,7 @@ class TypeproprieteController extends Controller
     public function index()
     {
         $typeproprietes = Typepropriete::paginate(5);
-        return view('typeproprietes', compact('typeproprietes'));
+        return view('types/index', compact('typeproprietes'));
     }
 
     /**
@@ -26,7 +26,7 @@ class TypeproprieteController extends Controller
      */
     public function create()
     {
-        return view('createtype');
+        return view('types/create');
     }
 
     /**
@@ -50,7 +50,7 @@ class TypeproprieteController extends Controller
     public function show(Typepropriete $typepropriete)
     {
         $typeproprietes = Typepropriete::all();
-        return view('typepropriete', compact('typepropriete'));
+        return view('types/show', compact('typepropriete'));
     }
 
     /**
@@ -61,7 +61,7 @@ class TypeproprieteController extends Controller
      */
     public function edit(Typepropriete $typepropriete)
     {
-        return view('edittypepropriete', compact('typepropriete'));
+        return view('types/edit', compact('typepropriete'));
     }
 
     /**

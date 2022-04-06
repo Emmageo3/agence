@@ -53,8 +53,12 @@
                         Types de propriétés
                       </a>
 
-                      <a class="navbar-item" href="{{ url('/typeproprietes') }}">
+                      <a class="navbar-item" href="{{ url('/pays') }}">
                         Pays
+                      </a>
+
+                      <a class="navbar-item" href="{{ url('/regions') }}">
+                        Régions
                       </a>
                       
                   </form>

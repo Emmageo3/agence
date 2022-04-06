@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Propriete;
-use App\Models\Proprietaire;
-use App\Http\Requests\Proprietaire as ProprietaireRequest;
+use App\Models\Pays;
+use App\Http\Requests\Pays as PaysRequest;
 
-class ProprietaireController extends Controller
+class PaysController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +15,8 @@ class ProprietaireController extends Controller
      */
     public function index()
     {
-        
-        $proprietaires = Proprietaire::paginate(5);
-        $proprietes = Propriete::all();
-        return view('proprietaires/index', compact('proprietaires', 'proprietes'));
+        $pays = Pays::paginate(5);
+        return view('pays/index', compact('pays'));
     }
 
     /**
@@ -29,7 +26,7 @@ class ProprietaireController extends Controller
      */
     public function create()
     {
-        return view('proprietaires/create');
+        return view('pays/create');
     }
 
     /**
@@ -38,10 +35,10 @@ class ProprietaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProprietaireRequest $proprietaireRequest)
+    public function store(PaysRequest $paysRequest)
     {
-        Proprietaire::create($proprietaireRequest->all());
-        return redirect()->route('proprietaires.index')->with('info', 'Le propriétaire a bien été enregistrée');
+        Pays::create($paysRequest->all());
+        return redirect()->route('pays.index')->with('info', 'Le pays a bien été enregistré');
     }
 
     /**
@@ -50,10 +47,9 @@ class ProprietaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Proprietaire $proprietaire)
+    public function show($id)
     {
-        $proprietes = Propriete::all();
-        return view('proprietaires/show', compact('proprietaire', 'proprietes'));
+        //
     }
 
     /**
@@ -62,9 +58,9 @@ class ProprietaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proprietaire $proprietaire)
+    public function edit($id)
     {
-        return view('proprietaires/edit', compact('proprietaire'));
+        //
     }
 
     /**
@@ -74,10 +70,9 @@ class ProprietaireController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProprietaireRequest $proprietaireRequest, Proprietaire $proprietaire)
+    public function update(Request $request, $id)
     {
-        proprietaire->update($proprietaireRequest->all());
-        return redirect()->route('proprietaires.index')->with('info', 'Le proprietaire a bien été modifiée');
+        //
     }
 
     /**

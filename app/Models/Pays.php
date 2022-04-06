@@ -9,6 +9,8 @@ class Pays extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom'];
+
     public function regions() 
     { 
         return $this->hasMany(Region::class); 

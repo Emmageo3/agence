@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProprieteController;
 use App\Http\Controllers\ProprietaireController;
 use App\Http\Controllers\TypeproprieteController;
+use App\Http\Controllers\PaysController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,7 @@ Route::resource('proprietes', ProprieteController::class)->middleware(['auth']);
 Route::resource('proprietaires', ProprietaireController::class)->middleware(['auth']);
 
 Route::resource('/typeproprietes', TypeproprieteController::class)->middleware(['auth']);
+
+Route::resource('/pays', PaysController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
