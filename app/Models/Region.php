@@ -9,6 +9,8 @@ class Region extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['pays_id' ,'nom'];
+
     public function Pays()
     { 
         return $this->belongsTo(Pays::class); 

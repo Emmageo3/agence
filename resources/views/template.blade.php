@@ -60,6 +60,18 @@
                       <a class="navbar-item" href="{{ url('/regions') }}">
                         Régions
                       </a>
+
+                      <a class="navbar-item" href="{{ url('/regions') }}">
+                        Départements
+                      </a>
+
+                      <a class="navbar-item" href="{{ url('/regions') }}">
+                        Communes
+                      </a>
+
+                      <a class="navbar-item" href="{{ url('/regions') }}">
+                        Quartiers
+                      </a>
                       
                   </form>
               </div>
@@ -101,3 +113,13 @@
     </main>
   </body>
 </html>
+
+<style>
+
+  body{
+    background-image: url("https://heintzimmobilierethotels.com/wp-content/uploads/2016/05/background-immeuble.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+</style>
