@@ -6,6 +6,7 @@ use App\Http\Controllers\ProprietaireController;
 use App\Http\Controllers\TypeproprieteController;
 use App\Http\Controllers\PaysController;
 use App\Http\Controllers\RegionController;
+use App\Http\Controllers\DepartementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,7 @@ Route::resource('/typeproprietes', TypeproprieteController::class)->middleware([
 Route::resource('/pays', PaysController::class)->middleware(['auth']);
 
 Route::resource('/regions', RegionController::class)->middleware(['auth']);
+
+Route::resource('/departements', DepartementController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';

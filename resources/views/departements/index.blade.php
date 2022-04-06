@@ -7,8 +7,8 @@
     @endif
     <div class="card">
         <header class="card-header">
-            <p class="card-header-title">Les régions</p>
-            <a class="button is-info" href="{{ route('regions.create') }}">Ajouter une région</a>
+            <p class="card-header-title">Les départements</p>
+            <a class="button is-info" href="{{ route('departements.create') }}">Ajouter un département</a>
         </header>
         <div class="card-content">
             <div class="content">
@@ -22,13 +22,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($regions as $region)
+                        @foreach($departements as $departement)
                             <tr>
-                                <td>{{ $region->id }}</td>
-                                <td><strong>{{ $region->nom }}</strong></td>
-                                <td><a class="button is-warning" href="{{ route('regions.edit', $region->id) }}">Modifier</a></td>
+                                <td>{{ $departement->id }}</td>
+                                <td><strong>{{ $departement->nom }}</strong></td>
+                                <td><a class="button is-warning" href="{{ route('departements.edit', $departement->id) }}">Modifier</a></td>
                                 <td>
-                                    <form action="{{ route('regions.destroy', $region->id) }}" method="post">
+                                    <form action="{{ route('departements.destroy', $departement->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="button is-danger" type="submit">Supprimer</button>
@@ -41,7 +41,7 @@
             </div>
         </div>
         <footer class="card-footer">
-            {{ $regions->links() }}
+            {{ $departements->links() }}
         </footer>
     </div>
 @endsection

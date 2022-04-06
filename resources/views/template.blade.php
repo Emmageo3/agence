@@ -61,7 +61,7 @@
                         Régions
                       </a>
 
-                      <a class="navbar-item" href="{{ url('/regions') }}">
+                      <a class="navbar-item" href="{{ url('/departements') }}">
                         Départements
                       </a>
 

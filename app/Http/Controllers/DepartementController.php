@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Region;
+use App\Models\Departement;
+use App\Http\Requests\Departement as DepartementRequest;
 
 class DepartementController extends Controller
 {
@@ -11,9 +14,12 @@ class DepartementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        //
+        $query = $id ? Region::whereId($id)->firstOrFail()->departements() : Departement::query();
+        $departements = Departement::paginate(5);
+        $regions = Region::all();
+        return view('departements/index', compact('regions', 'departements', 'id'));
     }
 
     /**
@@ -23,7 +29,8 @@ class DepartementController extends Controller
      */
     public function create()
     {
-        //
+        $regions = Region::all();
+        return view('departements/create', compact('regions'));
     }
 
     /**
@@ -32,9 +39,10 @@ class DepartementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartementRequest $departementRequest)
     {
-        //
+        Departement::create($departementRequest->all());
+        return redirect()->route('departements.index')->with('info', 'Le département a bien été enregistré');
     }
 
     /**
